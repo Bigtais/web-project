@@ -1,0 +1,16 @@
+<a routerLink="/new-user">Nouvel utilisateur</a>
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let user of users">
+    <h2>{{ user.username }}</h2>
+    <p>{{ user.email }}</p>
+    <p *ngIf="user.userCategory == 'employee';else other">Cet utilisateur est un employé.</p>
+    <ng-template #other>
+      <p>Cet utilisateur est un étudiant.</p>
+    </ng-template>
+    <p *ngIf="user.institution">Il est affilié à {{user.institution}}</p>
+    <p *ngIf="user.company">Son entreprise est : {{user.company}}</p>
+    <p *ngIf="user.salary">Son salaire est : {{user.salary}}</p>
+    <button class="btn btn-sm btn-danger" (click)="onSuppress(user.email)">Supprimer</button>
+  </li>
+</ul>

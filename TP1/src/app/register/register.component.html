@@ -1,0 +1,16 @@
+<div class="card">
+  <form [formGroup]="form" (ngSubmit)="submit()" class="user-card">
+    <h2>Inscription</h2>
+    <div>
+      <label for="username" [ngClass]="{ 'required': getForm['username'].errors?.['required']}">Username</label>
+      <input type="text" id="username" formControlName="username" placeholder="Username" />
+    </div>
+    <div>
+      <label for="password" [ngClass]="{ 'required': getForm['password'].errors?.['required']}">Password</label>
+      <input type="password" id="password" formControlName="password" placeholder="Password" />
+    </div>
+    <button class="btn btn-success">
+      S'inscrire
+    </button>
+  </form>
+</div>

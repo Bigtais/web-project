@@ -1,0 +1,50 @@
+<div class="col-sm-8 col-sm-offset-2">
+  <form [formGroup]="formGr" (ngSubmit)="submit()" class="user-card">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" formControlName="email" class="form-control"
+        [ngClass]="{ 'is-invalid': submit && form['email'].errors }" />
+      <div *ngIf="submit && form['email'].errors" class="invalid-feedback">
+        <div *ngIf="form['email'].errors['required']">
+          Field is required
+        </div>
+        <div *ngIf="form['email'].errors['email']">
+          <span>Email format is invalid</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="username" [ngClass]="{ 'required': form['username'].errors?.['required']}">Username</label>
+      <input type="text" id="username" formControlName="username" placeholder="Username" />
+      <span>Le nom doit comporter au moins 3 caractères</span>
+    </div>
+    <div class="flex">
+      <div class="flex">
+        <input type="radio" formControlName="userCategory" id="userCategory2" value="employee" />
+        <label for="userCategory2">Employee</label>
+      </div>
+      <div class="flex">
+        <input type="radio" formControlName="userCategory" id="userCategory1" value="student" />
+        <label for="userCategory1">Student</label>
+      </div>
+    </div>
+    <div>
+      <label for="institution" [ngClass]="{ 'required': form['institution'].errors?.['required'] }">Institution
+      </label>
+      <input type="text" id="institution" formControlName="institution" placeholder="Enter
+  institution" />
+    </div>
+    <div>
+      <label for="company" [ngClass]="{ 'required': form['company'].errors?.['required']}">Company</label>
+      <input type="text" id="company" formControlName="company" placeholder="Enter company" />
+    </div>
+    <div>
+      <label for="salary" [ngClass]="{ 'required': form['salary'].errors?.['required']}">Salary</label>
+      <input type="text" id="salary" formControlName="salary" placeholder="Enter salary" />
+    </div>
+    <div class="form-group">
+      <button type="button" (click)="submit()">Submit</button>
+      <button class="grey" (click)="reset()">Reset</button>
+    </div>
+  </form>
+</div>

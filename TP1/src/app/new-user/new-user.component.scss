@@ -1,0 +1,81 @@
+/** On applique un bord vert si l'élément a été visité et
+qu'il est valide (sauf pour l'élément <form>) */
+.ng-valid.ng-dirty:not(form) {
+ border: solid 2px lightgreen;
+}
+/** On applique un bord corail si l'élément a été visité et
+qu'il n'est pas valide (sauf pour l'élément <form>) */
+.ng-invalid.ng-touched:not(form) {
+ border: solid 2px lightcoral;
+}
+// On masque les span adjacent à un input
+input ~ span{
+ display: none;
+ color: red;
+}
+// On affiche les span adjacent à un input si l'input est en erreur
+input.ng-invalid.ng-touched ~ span{
+ display: block;
+}
+/** On ajoute une astérix si le champ est obligatoire */
+.required:after {
+ color: #d00;
+ content: '*';
+ margin-left: 5px;
+ top: 7px;
+}
+
+.user-card {
+  margin: 0 auto;
+  width: 50%;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.grey {
+  background-color: #ccc;
+  color: #fff;
+}
+
+.invalid-feedback {
+  color: #f00;
+  margin-top: 5px;
+  font-size: 14px;
+}

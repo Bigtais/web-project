@@ -1,0 +1,22 @@
+<div class="card">
+  <form *ngIf="!authStatus" [formGroup]="form" (ngSubmit)="onSignIn()" class="user-card">
+    <h2>Authentification</h2>
+    <div>
+      <label for="username" [ngClass]="{ 'required': getForm['username'].errors?.['required']}">Username</label>
+      <input type="text" id="username" formControlName="username" placeholder="Username" />
+    </div>
+    <div>
+      <label for="password" [ngClass]="{ 'required': getForm['password'].errors?.['required']}">Password</label>
+      <input type="password" id="password" formControlName="password" placeholder="Password" />
+    </div>
+    <button class="btn btn-success">
+      Se connecter
+    </button>
+    <button class="btn btn-register" (click)="goToRegister()">
+      S'inscrire
+    </button>
+  </form>
+  <button class="btn btn-danger" *ngIf="authStatus" (click)="onSignOut()">
+    Se déconnecter
+  </button>
+</div>

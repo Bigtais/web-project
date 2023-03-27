@@ -1,0 +1,23 @@
+<div>
+  <form [formGroup]="teamForm">
+    <!-- <mat-form-field> -->
+    <input formControlName="name" placeholder="Team Name" />
+    <!-- </mat-form-field> -->
+    <p>Members:</p>
+    <button mat-raised-button color="primary" (click)="addMember()">
+      Add Member
+    </button>
+    <ul>
+      <li *ngFor="let member of members?.controls; let i = index">
+        <sd-member [index]="i" [memberForm]="member" (deleteMember)="deleteMember($event)"></sd-member>
+      </li>
+    </ul>
+    <button type="submit" mat-raised-button (click)="saveTeam()" [disabled]="teamForm.invalid">
+      Submit
+    </button>
+    <div class="values">
+      <pre>Parent Form Status: <span class="status">{{teamForm.status}}</span></pre>
+      <pre>What the request body will look like: {{ teamForm.value | json }}</pre>
+    </div>
+  </form>
+</div>

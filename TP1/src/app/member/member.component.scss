@@ -1,0 +1,45 @@
+/* Set the height of each row */
+tr {
+  height: 80px;
+}
+
+/* Add a border and some padding to each cell in the row */
+td {
+  padding: 8px;
+}
+
+/* Add some margin and a shadow to each row to give it a card-like appearance */
+tr {
+  margin-bottom: 16px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the delete button */
+.btn {
+  padding: 5px 10px;
+  font-size: 1rem;
+  color: #fff;
+  border: none;
+}
+
+.btn-danger {
+  background-color: #d9534f;
+}
+
+.btn-danger:hover {
+  background-color: #c9302c;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.status {
+  font-weight: bold;
+  color: #3f51b5;
+}

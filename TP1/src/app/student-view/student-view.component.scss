@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.col-xs-12 {
+  width: 100%;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  margin-right: 10px;
+  color: #fff;
+  border: none;
+}
+
+.btn-success {
+  background-color: #5cb85c;
+}
+
+.btn-success:hover {
+  background-color: #449d44;
+}
+
+.btn-danger {
+  background-color: #d9534f;
+}
+
+.btn-danger:hover {
+  background-color: #c9302c;
+}
