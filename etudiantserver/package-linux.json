@@ -1,0 +1,23 @@
+{
+  "name": "1.0.0",
+  "version": "1.0.0",
+  "description": "Gestion d'étudiants",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel server/ -d dist && rm -rf dist/app && cp -r app/ dist/",
+    "start": "npm run build && node dist/server.js",
+    "inspect": "node --inspect dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@etulab.univ-amu.fr:a22015545/tp-web.git"
+  },
+  "author": "Rayane ALIOUANE",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2"
+  }
+}
